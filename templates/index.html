@@ -35,21 +35,6 @@
                         {{ form.submit(class = "btn btn-primary") }}
                     </div>
                 </form>
-                {% if prediction != null %}
-                {{ prediction }}
-                    {% if prediction == 1 %}
-                        <div>
-                            Your review is positve !!
-                        </div>
-                        <div class="emoji poo1" style="font-size: 55px;">😃</div>
-                    {% else %}
-                        <div>
-                            Your review is negative !!
-                        </div>
-                        <div class="emoji poo1" style="font-size: 55px;">😠</div>
-                    {% endif %}
-                {% endif %}
-                {{ prediction }}
             </div>
         </div>
     </div>

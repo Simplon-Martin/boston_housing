@@ -32,10 +32,6 @@ def predict():
 
     prediction = model.predict(res)
 
-    print(prediction)
-    # predictionproba = model.predict_proba([data])
-    # print(predictionproba)
-
     return render_template('predict.html', prediction=prediction[0])
 
 
@@ -46,39 +42,3 @@ def load_model():
         model = pickle.load(file)
 
     return model
-
-"""
-@app.route('/shortenurl', methods=['GET', 'POST'])
-def shortenurl():
-    if request.method == 'POST':
-        return render_template('shortenurl.html', shortcode=request.form['url'])
-    elif request.method == 'GET':
-        return 'A GET request was made'
-    else:
-        return 'Not a valid request method for this route'
-
-
-@app.route('/predict', methods=['POST', 'GET'])
-def predict():
-    model = load_model()
-    data = request.form['sentence']
-    print(data)
-    print("passe dans predict")
-    prediction = model.predict([data])
-    predictionproba = model.predict_proba([data])
-    print(predictionproba)
-
-    return render_template('predict.html', label=data, prediction=prediction[0])
-
-
-
-def load_model():
-
-    # Load the saved model
-    with open('model/model_analyse_sentiment_v1.pkl', 'rb') as file:
-        model = pickle.load(file)
-
-    return model
-
-
-"""
